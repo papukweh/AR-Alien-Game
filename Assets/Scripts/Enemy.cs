@@ -8,11 +8,6 @@ public class Enemy : MonoBehaviour
     public Rigidbody rigidyBody;
     public float baseSpeed = 0.5f;
     
-    public GameObject bullet;
-    public GameObject[] muzzles;
-    public float shootRate = 1.0f;
-    public float shootForce = 1.0f;
-    private float shootRateTimestamp = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,26 +20,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.LookAt(player.transform, transform.up);
+        // transform.rotation = Quaternion.Inverse(player.transform.rotation);
+        // transform.rotation = Quaternion.LookRotation(transform.position - player.transform.position);
         float rand = Random.Range(0.8f, 1.5f);
         Vector3 dir = (player.transform.position - transform.position).normalized;
         transform.Translate(transform.forward * Time.deltaTime * 2 * baseSpeed);
+        // rigidyBody.addForce(dir * baseSpeed);
 
-        if (Time.time > shootRateTimestamp) {
-            Shoot();
-        }
-    }
-
-
-    void Shoot()
-    {   
-        for (int i = 0; i < muzzles.Length; i++) {
-            GameObject muzzle = muzzles[i];
-            GameObject bulletObj = (GameObject)Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
-            bulletObj.GetComponent<EnemyBullet>().parent = gameObject;
-            bulletObj.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * shootForce);
-            shootRateTimestamp = Time.time + shootRate; 
-        }
-
+        
     }
     
 }
