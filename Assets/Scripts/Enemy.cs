@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public Rigidbody rigidyBody;
     public float baseSpeed = 0.5f;
+
+    public AudioSource spawnSound;
+    public AudioSource explosionSound;
     
     public GameObject bullet;
     public GameObject[] muzzles;
@@ -18,6 +21,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        spawnSound.Play();
         // rigidyBody = GameObject.GetComponent("Rigidbody");
     }
 
@@ -28,6 +32,7 @@ public class Enemy : MonoBehaviour
         float rand = Random.Range(0.8f, 1.5f);
         Vector3 dir = (player.transform.position - transform.position).normalized;
         transform.Translate(transform.forward * Time.deltaTime * 2 * baseSpeed);
+
 
         if (Time.time > shootRateTimestamp) {
             Shoot();
@@ -44,7 +49,6 @@ public class Enemy : MonoBehaviour
             bulletObj.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * shootForce);
             shootRateTimestamp = Time.time + shootRate; 
         }
-
     }
     
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arCamera: {fileID: 1517508327}
   smoke: {fileID: 1975141522878942813, guid: 1b9f4316433b24e92be0a740990a1e4d, type: 3}
-  spawn: {fileID: 0}
+  spawn: {fileID: 236701597}
 --- !u!4 &23660168
 Transform:
   m_ObjectHideFlags: 0
@@ -492,6 +492,10 @@ PrefabInstance:
     - target: {fileID: 1973383864970282391, guid: d10e113154321f02faf7296fa8766eed, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973383864970282391, guid: d10e113154321f02faf7296fa8766eed, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
       propertyPath: stopAction
@@ -1768,18 +1772,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 23660167}
-        m_TargetAssemblyTypeName: ShootScript, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 190071595}
         m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
         m_MethodName: SendMessage
@@ -1790,6 +1782,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Shoot
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 23660167}
+        m_TargetAssemblyTypeName: ShootScript, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1408537980
@@ -2323,6 +2327,7 @@ GameObject:
   - component: {fileID: 2143484606}
   - component: {fileID: 2143484605}
   - component: {fileID: 2143484607}
+  - component: {fileID: 2143484608}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2389,3 +2394,11 @@ MonoBehaviour:
   hpBar: {fileID: 1431159358}
   damageScreen: {fileID: 918649816}
   gameOverScreen: {fileID: 514065550}
+--- !u!81 &2143484608
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143484603}
+  m_Enabled: 1
