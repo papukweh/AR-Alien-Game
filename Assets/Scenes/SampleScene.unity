@@ -327,7 +327,9 @@ MonoBehaviour:
   - {fileID: 6354193352074040050, guid: d15182df7f1effe4287624b1e475652d, type: 3}
   - {fileID: 1633940795266348571, guid: 97a9640837918b74dbf980d4d6b4d9bd, type: 3}
   player: {fileID: 1517508327}
+  waveLabel: {fileID: 372061299}
   enemiesCount: 0
+  waveIndex: 1
 --- !u!4 &236701599
 Transform:
   m_ObjectHideFlags: 0
