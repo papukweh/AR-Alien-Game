@@ -8,11 +8,11 @@ public class Spawn : MonoBehaviour
 	public Transform spawnPoint;
 	public GameObject[] enemies;
     public GameObject player;
-
+    public int enemiesCount;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartWave(10, 5, enemies, 9, 12));
+        StartCoroutine(StartWave(100, 3, enemies, 5, 10));
     }
 
     void SpawnEnemy(GameObject enemy, float angle, float radius) {
@@ -27,9 +27,18 @@ public class Spawn : MonoBehaviour
 
     	Instantiate(enemy, spawnPoint.position, Quaternion.identity);
     }
+    
+    public void OnEnemyKilled() {
+        enemiesCount -= 1;
+        if(enemiesCount == 0){
+            StartWave(50, 2, enemies, 5, 10);
+        }
+    }
 
-    IEnumerator StartWave(int enemiesCount, float interval, GameObject[] enemies, float minRadius, float maxRadius) {
+    IEnumerator StartWave(int _enemiesCount, float interval, GameObject[] enemies, float minRadius, float maxRadius) {
     	
+        enemiesCount = _enemiesCount;
+
         for (int i = 0; i < enemiesCount; i++) {
             yield return new WaitForSeconds(interval);
             float radius = Random.Range(minRadius, maxRadius);
@@ -39,9 +48,7 @@ public class Spawn : MonoBehaviour
             SpawnEnemy(enemy, angle, radius);
 
         }
-        
-
         // yield return new WaitForSeconds(enemiesCount * interval + 10);
-
     }
+
 }
