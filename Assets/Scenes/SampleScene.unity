@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1973383864970282391, guid: d10e113154321f02faf7296fa8766eed, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
       propertyPath: stopAction
       value: 0
@@ -492,6 +496,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
       propertyPath: VelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
+      propertyPath: CollisionModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
@@ -515,8 +523,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
       propertyPath: TrailModule.widthOverTrail.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6761724193356951949, guid: d10e113154321f02faf7296fa8766eed, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxColor.b
@@ -680,17 +696,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e330535275f1a7709b0dc0c2529160cb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d10e113154321f02faf7296fa8766eed, type: 3}
---- !u!114 &603309062 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7619628677020318594, guid: d10e113154321f02faf7296fa8766eed, type: 3}
-  m_PrefabInstance: {fileID: 363566307}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee902748532e83146b16d4df49564eef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1063,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 603309062}
+      - m_Target: {fileID: 190071595}
         m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
         m_MethodName: SendMessage
         m_Mode: 5

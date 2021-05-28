@@ -6,9 +6,15 @@ public class Gun : MonoBehaviour
 {
 	public GameObject laser;
 	public GameObject arCamera;
+	private AudioSource audioSource;
+
+	void Start() {
+		audioSource = GetComponent<AudioSource> ();
+	}
 
     void Shoot() {
-    	Instantiate(laser, laser.transform.position, Quaternion.identity);
+        audioSource.Play();
+    	Instantiate(laser, laser.transform.position, arCamera.transform.rotation);
     }
 
     void Update() {
