@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Spawn : MonoBehaviour
 {
@@ -8,7 +10,12 @@ public class Spawn : MonoBehaviour
 	public Transform spawnPoint;
 	public GameObject[] enemies;
     public GameObject player;
+
+    public Text waveLabel;
     public int enemiesCount;
+    
+
+    public int waveIndex = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,8 @@ public class Spawn : MonoBehaviour
     IEnumerator StartWave(int _enemiesCount, float interval, GameObject[] enemies, float minRadius, float maxRadius) {
     	
         enemiesCount = _enemiesCount;
+        waveLabel.text = "Wave " + waveIndex.ToString();
+        waveIndex++;
 
         for (int i = 0; i < enemiesCount; i++) {
             yield return new WaitForSeconds(interval);
