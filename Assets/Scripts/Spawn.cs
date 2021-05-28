@@ -30,8 +30,9 @@ public class Spawn : MonoBehaviour
     
     public void OnEnemyKilled() {
         enemiesCount -= 1;
+        Debug.Log("Enemy killed!");
         if(enemiesCount == 0){
-            StartWave(50, 2, enemies, 5, 10);
+            StartWave(50, 2, enemies, 4, 7);
         }
     }
 
@@ -46,7 +47,6 @@ public class Spawn : MonoBehaviour
             GameObject enemy = enemies[Random.Range(0, enemies.Length)];
 
             SpawnEnemy(enemy, angle, radius);
-
         }
         // yield return new WaitForSeconds(enemiesCount * interval + 10);
     }

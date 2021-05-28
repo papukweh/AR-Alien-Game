@@ -3,7 +3,9 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Bullet
     - Enemy
+    - EnemyBullet
     - Gun
+    - Player
     - ShootScript
     - Spawn
     Unity.Rider.Editor.dll:
@@ -19,6 +21,8 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.ARFoundation.ARPoseDriver
     - UnityEngine.XR.ARFoundation.ARSession
     - UnityEngine.XR.ARFoundation.ARSessionOrigin
+    Unity.XR.ARKit.Editor.dll:
+    - UnityEditor.XR.ARKit.ARKitSettings
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
     Unity.XR.Management.dll:
@@ -59,6 +63,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
@@ -70,42 +76,48 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1522}
+      Script: {instanceID: 6294}
     - Class: 114
-      Script: {instanceID: 1618}
+      Script: {instanceID: 6388}
     - Class: 114
-      Script: {instanceID: 1714}
+      Script: {instanceID: 6484}
     - Class: 114
-      Script: {instanceID: 2476}
+      Script: {instanceID: 6558}
     - Class: 114
-      Script: {instanceID: 2506}
+      Script: {instanceID: 7234}
     - Class: 114
-      Script: {instanceID: 2590}
+      Script: {instanceID: 7264}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 7346}
     - Class: 114
-      Script: {instanceID: 2916}
+      Script: {instanceID: 7542}
     - Class: 114
-      Script: {instanceID: 3012}
+      Script: {instanceID: 7564}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 7666}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 7762}
     - Class: 114
-      Script: {instanceID: 3316}
+      Script: {instanceID: 7872}
     - Class: 114
-      Script: {instanceID: 3728}
+      Script: {instanceID: 8060}
     - Class: 114
-      Script: {instanceID: 3790}
+      Script: {instanceID: 8066}
     - Class: 114
-      Script: {instanceID: 4082}
+      Script: {instanceID: 8478}
     - Class: 114
-      Script: {instanceID: 4390}
+      Script: {instanceID: 8540}
     - Class: 114
-      Script: {instanceID: 4642}
+      Script: {instanceID: 8828}
+    - Class: 114
+      Script: {instanceID: 9128}
+    - Class: 114
+      Script: {instanceID: 9372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -124,12 +136,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: d251bf88db6c95a6b1aa0b69298da9ef
-    assemblyName: UnityEngine.SpatialTracking.dll
-    namespaceName: UnityEngine.SpatialTracking
-    className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
       Hash: 24c74cc0d527a06113f2b967042769f0
@@ -232,6 +238,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 4a480375cf2bf78eb742f5c3c664ff07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyBullet
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -372,6 +384,12 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: f82ebd16776b32e285c27d85ee6d8ab9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player
+  - hash:
+      serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -396,7 +414,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: c0527cb2151c8cc4e0865e37362eaf33
+      Hash: ebb0e4e1997725c5c42c5d876c94fd38
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spawn
@@ -520,6 +538,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: d251bf88db6c95a6b1aa0b69298da9ef
+    assemblyName: UnityEngine.SpatialTracking.dll
+    namespaceName: UnityEngine.SpatialTracking
+    className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -744,7 +768,7 @@ ScriptsOnlyBuild:
     className: ARPointCloudParticleVisualizer
   - hash:
       serializedVersion: 2
-      Hash: 87c6b78f055c39c698dd6249c92840b0
+      Hash: 45962d85670f384ff87de2e89c1831aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -798,7 +822,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 33ebcf3b13fcce6af06f764380baf3eb
+      Hash: 59f6fd3d1b8126d9151c784e1f7a25a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShootScript
@@ -865,4 +889,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: /home/papu/AR Alien Game/Builds/Test.apk
+  playerPath: /home/papu/AR Alien Game/Builds/finalTest.apk

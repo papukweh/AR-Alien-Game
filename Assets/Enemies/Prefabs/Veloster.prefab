@@ -655,8 +655,8 @@ MonoBehaviour:
   player: {fileID: 0}
   rigidyBody: {fileID: 0}
   baseSpeed: 0.5
-  spawnSound: {fileID: 0}
-  explosionSound: {fileID: 0}
+  spawnSound: {fileID: 3962506006259211867}
+  explosionSound: {fileID: 117718060809554238}
   bullet: {fileID: 4171455635314720343, guid: 857e6b643a5665f4485ca561123df122, type: 3}
   muzzles:
   - {fileID: 3887348221260972485}
@@ -1280,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 2154757826196466849}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4022441194658808262
 GameObject:
@@ -1375,7 +1375,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 2154757826196466849}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4240585858641295688
 GameObject:
