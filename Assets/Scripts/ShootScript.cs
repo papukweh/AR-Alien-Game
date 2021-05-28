@@ -7,8 +7,13 @@ public class ShootScript : MonoBehaviour
 
 	public GameObject arCamera;
     public GameObject smoke;
+    public GameObject spawn;
 
-    public void Shoot()
+    void Start(){
+        spawn = GameObject.FindWithTag("Player");
+    }
+
+    public void Shoot(int enemiesCount)
     {
         RaycastHit hit;
 
@@ -16,6 +21,9 @@ public class ShootScript : MonoBehaviour
         	if (hit.transform.gameObject.tag == "Enemy") {
         		Destroy(hit.transform.gameObject);
                 Instantiate(smoke, hit.point, Quaternion.LookRotation(hit.normal));
+                spawn.GetComponent<Spawn>().OnEnemyKilled();
+
+                
         	}
         }
     }
