@@ -2389,6 +2389,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  hpBar: {fileID: 1431159358}
+  damageScreen: {fileID: 918649816}
+  gameOverScreen: {fileID: 514065550}
 --- !u!81 &2143484608
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2397,6 +2400,3 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143484603}
   m_Enabled: 1
-  hpBar: {fileID: 1431159358}
-  damageScreen: {fileID: 918649816}
-  gameOverScreen: {fileID: 514065550}
