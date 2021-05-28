@@ -12,7 +12,7 @@ public class Spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartWave(100, 1, enemies, 20, 40));
+        StartCoroutine(StartWave(100, 3, enemies, 5, 10));
     }
 
     void SpawnEnemy(GameObject enemy, float angle, float radius) {
@@ -20,7 +20,7 @@ public class Spawn : MonoBehaviour
         // Sets the radial offset
         Vector3 offset = Quaternion.AngleAxis(angle, Vector3.up) * player.transform.forward * radius;
         // Sets the vertical offset based on screen size
-        float screen_height = Screen.height/300;
+        float screen_height = Screen.height/50;
         offset.y = Random.Range(-screen_height, screen_height);
 
         spawnPoint.position = player.transform.position + offset;
@@ -34,8 +34,9 @@ public class Spawn : MonoBehaviour
             yield return new WaitForSeconds(interval);
             float radius = Random.Range(minRadius, maxRadius);
             float angle = Random.Range(0, 360);
+            GameObject enemy = enemies[Random.Range(0, enemies.Length)];
 
-            SpawnEnemy(enemies[0], angle, radius);
+            SpawnEnemy(enemy, angle, radius);
 
         }
         
