@@ -12,7 +12,7 @@ public class Spawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartWave(100, 3, enemies, 5, 10));
+        StartCoroutine(StartWave(10, 5, enemies, 9, 12));
     }
 
     void SpawnEnemy(GameObject enemy, float angle, float radius) {
