@@ -6,6 +6,7 @@ public class ShootScript : MonoBehaviour
 {
 
 	public GameObject arCamera;
+    public GameObject smoke;
 
     public void Shoot()
     {
@@ -14,6 +15,7 @@ public class ShootScript : MonoBehaviour
         if(Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out hit)) {
         	if (hit.transform.gameObject.tag == "Enemy") {
         		Destroy(hit.transform.gameObject);
+                Instantiate(smoke, hit.point, Quaternion.LookRotation(hit.normal));
         	}
         }
     }
