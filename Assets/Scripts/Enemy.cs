@@ -7,12 +7,16 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public Rigidbody rigidyBody;
     public float baseSpeed = 0.5f;
+
+    public AudioSource spawnSound;
+    public AudioSource explosionSound;
     
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        spawnSound.Play();
         // rigidyBody = GameObject.GetComponent("Rigidbody");
     }
 
@@ -26,8 +30,10 @@ public class Enemy : MonoBehaviour
         Vector3 dir = (player.transform.position - transform.position).normalized;
         transform.Translate(transform.forward * Time.deltaTime * 2 * baseSpeed);
         // rigidyBody.addForce(dir * baseSpeed);
+    }
 
-        
+    void OnDestroy() {
+        explosionSound.Play();
     }
     
 }
