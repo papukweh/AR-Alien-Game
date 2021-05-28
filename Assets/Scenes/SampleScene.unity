@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -318,7 +318,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1260573192}
-  balloon: {fileID: 670334975291859133, guid: cb584ef685d16436d9e0e318f8ef950e, type: 3}
+  enemies:
+  - {fileID: 6354193352074040050, guid: d15182df7f1effe4287624b1e475652d, type: 3}
+  - {fileID: 1633940795266348571, guid: 97a9640837918b74dbf980d4d6b4d9bd, type: 3}
+  player: {fileID: 1517508327}
 --- !u!4 &236701599
 Transform:
   m_ObjectHideFlags: 0
@@ -790,6 +793,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1260573191
+<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1128,7 +1132,7 @@ GameObject:
   - component: {fileID: 1517508329}
   m_Layer: 0
   m_Name: AR Camera
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,7 +13,7 @@ public class ShootScript : MonoBehaviour
         RaycastHit hit;
 
         if(Physics.Raycast(arCamera.transform.position, arCamera.transform.forward, out hit)) {
-        	if (hit.transform.name == "balloon1(Clone)") {
+        	if (hit.transform.gameObject.tag == "Enemy") {
         		Destroy(hit.transform.gameObject);
                 Instantiate(smoke, hit.point, Quaternion.LookRotation(hit.normal));
         	}
